@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/oliver/StudioProjects/TKA-Robotics-FTC-Robot-Controller/TeamCode/build/intermediates/merged_res/debug/raw_readme.md.flat",
-        "source": "/Users/oliver/StudioProjects/TKA-Robotics-FTC-Robot-Controller/TeamCode/src/main/res/raw/readme.md"
+        "merged": "/Users/oliver/StudioProjects/engineering-robot/TeamCode/build/intermediates/merged_res/debug/raw_readme.md.flat",
+        "source": "/Users/oliver/StudioProjects/engineering-robot/TeamCode/src/main/res/raw/readme.md"
     },
     {
-        "merged": "/Users/oliver/StudioProjects/TKA-Robotics-FTC-Robot-Controller/TeamCode/build/intermediates/merged_res/debug/xml_teamwebcamcalibrations.xml.flat",
-        "source": "/Users/oliver/StudioProjects/TKA-Robotics-FTC-Robot-Controller/TeamCode/src/main/res/xml/teamwebcamcalibrations.xml"
+        "merged": "/Users/oliver/StudioProjects/engineering-robot/TeamCode/build/intermediates/merged_res/debug/xml_teamwebcamcalibrations.xml.flat",
+        "source": "/Users/oliver/StudioProjects/engineering-robot/TeamCode/src/main/res/xml/teamwebcamcalibrations.xml"
     }
 ]
