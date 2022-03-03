@@ -1,0 +1,40 @@
+org/firstinspires/ftc/teamcode/TestCarousel.java
+ org.firstinspires.ftc.teamcode.TestCarousel
+org/firstinspires/ftc/teamcode/AutonomousMecanumBlue1.java
+ org.firstinspires.ftc.teamcode.AutonomousMecanumBlue1
+org/firstinspires/ftc/teamcode/Lift.java
+ org.firstinspires.ftc.teamcode.Lift
+org/firstinspires/ftc/teamcode/TouchSensor.java
+ org.firstinspires.ftc.teamcode.TouchSensor
+org/firstinspires/ftc/teamcode/AutonomousMecanumRed1.java
+ org.firstinspires.ftc.teamcode.AutonomousMecanumRed1
+org/firstinspires/ftc/teamcode/Carousel.java
+ org.firstinspires.ftc.teamcode.Carousel
+org/firstinspires/ftc/teamcode/MainWestCoast.java
+ org.firstinspires.ftc.teamcode.MainWestCoast
+org/firstinspires/ftc/teamcode/AutonomousMecanumRed2.java
+ org.firstinspires.ftc.teamcode.AutonomousMecanumRed2
+org/firstinspires/ftc/teamcode/SampleDrive.java
+ org.firstinspires.ftc.teamcode.SampleDrive
+org/firstinspires/ftc/teamcode/Catapult.java
+ org.firstinspires.ftc.teamcode.Catapult
+org/firstinspires/ftc/teamcode/AutonomousMecanumBlue2.java
+ org.firstinspires.ftc.teamcode.AutonomousMecanumBlue2
+org/firstinspires/ftc/teamcode/SensorREV2MDistance.java
+ org.firstinspires.ftc.teamcode.SensorREV2MDistance
+org/firstinspires/ftc/teamcode/TestCarouselPosV2.java
+ org.firstinspires.ftc.teamcode.TestCarouselPosV2
+org/firstinspires/ftc/teamcode/WestCoastDrive.java
+ org.firstinspires.ftc.teamcode.WestCoastDrive
+org/firstinspires/ftc/teamcode/TestCarouselPos.java
+ org.firstinspires.ftc.teamcode.TestCarouselPos
+org/firstinspires/ftc/teamcode/SensorMRRange.java
+ org.firstinspires.ftc.teamcode.SensorMRRange
+org/firstinspires/ftc/teamcode/Intake.java
+ org.firstinspires.ftc.teamcode.Intake
+org/firstinspires/ftc/teamcode/BuildConfig.java
+ org.firstinspires.ftc.teamcode.BuildConfig
+org/firstinspires/ftc/teamcode/SampleDriveBigBird.java
+ org.firstinspires.ftc.teamcode.SampleDriveBigBird
+org/firstinspires/ftc/teamcode/TestOpMode.java
+ org.firstinspires.ftc.teamcode.TestOpMode
