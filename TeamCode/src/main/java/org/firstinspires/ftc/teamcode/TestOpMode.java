@@ -5,8 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 /*
 Player 1 (gamepad1)
-left stick      (hold)      shifting
-right stick     (hold)      rotating
+right stick     (hold)      drive
 left bumper     (toggle)    team shipping element lift motor
 right bumper    (toggle)    surgical tubing
 */
@@ -32,11 +31,12 @@ public class TestOpMode extends OpMode {
     @Override
     public void loop() {
         drive.telemetry(telemetry);
-        //intake.telemetry(telemetry);
-        //lift.telemetry(telemetry);
+        intake.telemetry(telemetry);
+        lift.telemetry(telemetry);
+        telemetry.update();
 
-        drive.drive(gamepad1.right_stick_x, gamepad1.right_stick_y); //drive function
-        /*
+        drive.drive(gamepad1.left_stick_x, gamepad1.right_stick_y); //drive function
+
         //TEAM SHIPPING ELEMENT LIFT
         if (gamepad2.left_bumper && !lastPressedLiftMotor) {
             liftMotorToggle = !liftMotorToggle;
@@ -58,6 +58,6 @@ public class TestOpMode extends OpMode {
             intake.intakeOff();
         }
         lastPressedSurgical = gamepad1.right_bumper;
-        */
+
     }
 }

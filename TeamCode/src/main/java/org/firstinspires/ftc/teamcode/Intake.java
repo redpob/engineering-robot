@@ -2,15 +2,14 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 public class Intake {
-    //private DcMotor intakeMotor; //intake
+    private DcMotor intakeMotor; //intake
 
     public Intake(HardwareMap hardwareMap){
-        /*intakeMotor = hardwareMap.get(DcMotor.class, "intake");
+        intakeMotor = hardwareMap.get(DcMotor.class, "intake");
     }
 
     public void intakeOn() {
@@ -22,6 +21,6 @@ public class Intake {
     }
 
     public void telemetry(Telemetry telemetry) {
-        telemetry.addData("Surgical Tubing Motor Power", intakeMotor.getPower());*/
+        telemetry.addData("Surgical Tubing Motor Power", intakeMotor.getPower());
     }
 }
