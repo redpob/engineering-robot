@@ -12,7 +12,7 @@ right bumper    (toggle)    surgical tubing
 
 @TeleOp
 public class TestOpMode extends OpMode {
-    SampleDrive drive;
+    Hardware robot;
     Intake intake;
     Lift lift;
 
@@ -23,19 +23,19 @@ public class TestOpMode extends OpMode {
 
     @Override
     public void init() {
-        drive = new SampleDrive(hardwareMap);
+        robot = new Hardware(hardwareMap);
         intake = new Intake(hardwareMap);
         lift = new Lift(hardwareMap);
     }
 
     @Override
     public void loop() {
-        drive.telemetry(telemetry);
+        robot.telemetry(telemetry);
         intake.telemetry(telemetry);
         lift.telemetry(telemetry);
         telemetry.update();
 
-        drive.drive(gamepad1.left_stick_x, gamepad1.right_stick_y); //drive function
+        robot.drive(gamepad1.left_stick_x, gamepad1.right_stick_y); //drive function
 
         //TEAM SHIPPING ELEMENT LIFT
         if (gamepad2.left_bumper && !lastPressedLiftMotor) {
