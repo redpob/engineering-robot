@@ -13,7 +13,7 @@ public class Intake {
     }
 
     public void intakeOn() {
-        intakeMotor.setPower(-250/300);
+        intakeMotor.setPower(-1);
     }
 
     public void intakeOff() {

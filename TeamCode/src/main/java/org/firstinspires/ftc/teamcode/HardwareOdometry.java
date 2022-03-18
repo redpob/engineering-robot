@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.hardware.bosch.BNO055IMU;
+import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -7,6 +9,9 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
+import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 
 public class HardwareOdometry {
 
@@ -49,6 +54,9 @@ public class HardwareOdometry {
     public double x = 0;
     public double y = 0;
     public double h = 0;
+
+    private BNO055IMU imu;
+    private double offset = 0.0;
 
 
     public HardwareOdometry(HardwareMap hwMap) {
@@ -96,9 +104,29 @@ public class HardwareOdometry {
         encoderLeft = BLMotor;
         encoderRight = BRMotor;
         encoderAux = FRMotor;
+
+        //IMU
+        BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
+        parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;
+        parameters.accelUnit           = BNO055IMU.AccelUnit.METERS_PERSEC_PERSEC;
+        parameters.calibrationDataFile = "BNO055IMUCalibration.json"; // see the calibration sample opmode
+        parameters.loggingEnabled      = true;
+        parameters.loggingTag          = "IMU";
+        parameters.accelerationIntegrationAlgorithm = new JustLoggingAccelerationIntegrator();
+
+        imu = hardwareMap.get(BNO055IMU.class, "imu");
+        imu.initialize(parameters);
+        offset = imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES).firstAngle;
     }
 
     public void drive(double x, double y) {
+        FRMotor.setPower(-x - y);
+        FLMotor.setPower(-x + y);
+        BRMotor.setPower(-x - y);
+        BLMotor.setPower(-x + y);
+    }
+
+    public void fieldCentricDrive(double x, double y) { //working on...
         FRMotor.setPower(-x - y);
         FLMotor.setPower(-x + y);
         BRMotor.setPower(-x - y);
@@ -119,7 +147,7 @@ public class HardwareOdometry {
         int dn2 = currentRightPosition - oldRightPosition;
         int dn3 = currentAuxPosition - oldAuxPosition;
 
-        //diference in x, y, and theta
+        //difference in x, y, and theta
         double dtheta = cm_per_tick * (dn2 - dn1) / L;
         double dx = cm_per_tick * (dn1 + dn2) / 2.0;
         double dy = cm_per_tick * (dn3 - (dn2 - dn1) * B / L);
